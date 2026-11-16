@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TaskLab | Браузерное демо</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./demo-api.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header class="masthead">
+      <p class="eyebrow">БРАУЗЕРНОЕ ДЕМО</p>
+      <h1>TaskLab</h1>
+      <p>Выбери роль и попробуй работу со списком задач. Изменения сохраняются в этом браузере.</p>
+    </header>
+    <p id="message" role="status" aria-live="polite"></p>
+    <section id="auth" hidden aria-labelledby="auth-title">
+      <h2 id="auth-title">Режим работы</h2>
+      <div class="role-picker">
+        <button type="button" data-role="editor">Редактор</button>
+        <button type="button" data-role="viewer" class="secondary">Наблюдатель</button>
+      </div>
+    </section>
+    <section id="board" hidden aria-labelledby="tasks-title">
+      <div class="section-head">
+        <div><h2 id="tasks-title">Задачи</h2><p id="role"></p></div>
+        <button id="logout" type="button" class="secondary">Сменить роль</button>
+      </div>
+      <form id="create" class="create">
+        <label for="title">Новая задача</label>
+        <input id="title" maxlength="120" required>
+        <button type="submit">Добавить</button>
+      </form>
+      <ul id="tasks"></ul>
+      <p id="empty" hidden>Список задач пуст.</p>
+    </section>
+  </main>
+</body>
+</html>
